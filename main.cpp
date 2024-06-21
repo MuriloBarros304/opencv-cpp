@@ -50,10 +50,6 @@ int main(void) {
             std::string fps_text = "FPS: " + std::to_string(fps);
             cv::putText(frame, fps_text, cv::Point(10, 30),
                         cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 255), 2);
-            std::string bat_text =
-                "Battery: " + std::to_string(static_cast<int>(80));
-            cv::putText(frame, bat_text, cv::Point(450, 450),
-                        cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 255), 2);
             detect(frame);
         }
 
