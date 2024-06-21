@@ -12,7 +12,7 @@ void detect(cv::Mat frame) {
     cv::GaussianBlur(imagemCinza, imagemSuavizada, cv::Size(5, 5), 1.5);
 
     // Canny
-    cv::Canny(imagemSuavizada, bordas, 50, 150);
+    cv::Canny(imagemSuavizada, bordas, 5, 10);
 
     // Encontrar contornos na imagem
     std::vector<std::vector<cv::Point>> contornos;
@@ -44,11 +44,13 @@ void detect(cv::Mat frame) {
             cv::line(frame, maiorPoligono[j], maiorPoligono[(j + 1) % 4],
                      cv::Scalar(0, 255, 0), 3);
         }
-
-        // Adicionar o texto "base" no centro do retângulo
         cv::Rect retangulo = cv::boundingRect(maiorPoligono);
-        cv::putText(frame, "base", cv::Point(retangulo.x, retangulo.y - 3),
-                    cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 255, 0), 2);
+        //cv::circle(frame, cv::Point(retangulo.x/2, retangulo.y/2), 1, cv::Scalar(0, 0, 255));
+        // Adicionar o texto "base" no centro do retângulo
+        //cv::Rect retangulo = cv::boundingRect(maiorPoligono);
+        //cv::putText(frame, "base", cv::Point(retangulo.x, retangulo.y - 3),
+                   //cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 255, 0), 2);
+        //std::cout << maiorArea << "\n";
     }
 
     // Exibir a imagem resultante

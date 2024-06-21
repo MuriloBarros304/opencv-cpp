@@ -33,7 +33,7 @@ int main(void) {
 
         if (!start_timing) {
             // Inicializar a janela e iniciar a contagem de tempo
-            cv::namedWindow("Webcam");
+            //cv::namedWindow("Detect");
             start = std::chrono::high_resolution_clock::now();
             start_timing = true;
         } else {
