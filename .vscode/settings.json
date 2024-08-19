@@ -1,0 +1,6 @@
+{
+    "cmake.sourceDirectory": "/home/murilo/Documentos/GitHub/opencv_cpp/detect",
+    "files.associations": {
+        "chrono": "cpp"
+    }
+}
